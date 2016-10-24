@@ -100,7 +100,7 @@
       (Array.isArray(record) && record.containsArray(search)); // for ['PHP', 'Perl'] part of ['PHP','Python','Perl'] like comparison
     } else if ( search !== null && typeof search === 'object' ) {  // comparison operators
       return ( (search.exec !== undefined && search.exec(record) !== null) || // RegExp
-      (search.$ne && record !== search.$ne) ||
+      (record !== search.$ne) ||
       record < search.$lt || record <= search.$lte ||
       record > search.$gt || record >= search.$gte );
     } else {
